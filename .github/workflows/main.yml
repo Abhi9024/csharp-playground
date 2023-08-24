@@ -17,8 +17,10 @@ jobs:
         with:
           dotnet-version: ${{ matrix.dotnet-version }}
       - name: Install dependencies
-        run: dotnet restore HelloTests
-      - name: Build
-        run: dotnet build HelloTests --configuration Release --no-restore
-      - name: Test
+        run: dotnet restore blazorApp
+      - name: Build Blazor App
+        run: dotnet build blazorApp --configuration Release --no-restore
+      - name: Build HelloTests 
+        run: dotnet build HelloTests --configuration Release
+      - name: Test HelloTests
         run: dotnet test HelloTests --no-restore --verbosity normal
