@@ -8,11 +8,20 @@
 
 <button class="btn btn-primary" @onclick="IncrementCount">Click me</button>
 
+<p role="status">Welcome Message: @Message</p>
+<button class="btn btn-primary" @onclick="DisplayMessage">Display Message</button>
+
 @code {
     private int currentCount = 0;
+    private string Message = string.Empty;
 
     private void IncrementCount()
     {
         currentCount++;
+    }
+
+    private void DisplayMessage()
+    {
+        Message = "Hello!! How are you?";
     }
 }
