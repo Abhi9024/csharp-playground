@@ -20,6 +20,10 @@ jobs:
         run: dotnet restore blazorApp
       - name: Build Blazor App
         run: dotnet build blazorApp --configuration Release --no-restore
+      - name: Install API dependencies
+        run: dotnet restore apiApp
+      - name: Build API
+        run: dotnet build apiApp --configuration Release --no-restore
       - name: Build HelloTests 
         run: dotnet build HelloTests --configuration Release
       - name: Test HelloTests
